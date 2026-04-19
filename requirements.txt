@@ -2,4 +2,6 @@ streamlit
 pymupdf
 spacy
 scikit-learn
-pandass
+pandas
+sentence-transformers
+torch
