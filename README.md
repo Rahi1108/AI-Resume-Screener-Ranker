@@ -11,15 +11,15 @@ The system utilizes **PyMuPDF** to parse raw text from uploaded PDF resumes. It 
 
 ### 2. Natural Language Preprocessing (NLP)
 Using **SpaCy**, the code cleans the text by:
-***Lemmatization:** Converting words to their root form (e.g., "databases" becomes "database") to ensure exact matches aren't missed.
-***Noise Filtering:** Stripping out "filler" words like "responsibilities," "requirements," or "background" to focus strictly on engineering skills.
+**Lemmatization:** Converting words to their root form (e.g., "databases" becomes "database") to ensure exact matches aren't missed.
+**Noise Filtering:** Stripping out "filler" words like "responsibilities," "requirements," or "background" to focus strictly on engineering skills.
 
 ### 3. Semantic Vectorization (The "Brain")
 This is the core of the project. Instead of just looking for words, it uses a **Sentence Transformer model** (`paraphrase-multilingual-MiniLM-L12-v2`) to convert text into high-dimensional vectors. 
-* It calculates **Cosine Similarity** to see how closely the "vibe" of your resume (e.g., your research on **Adaptive Cloud Resource Management**) matches the job's needs.
+* It calculates **Cosine Similarity** to see how closely the "vibe" of your resume matches the job's needs.
 
 ### 4. Smart Skill Mapping
-The code includes a custom **Synonym Engine**. If a Job Description asks for "Generative AI" and your resume lists **"Gemini API"** (from your **SmartSpend AI** project), the system automatically recognizes this as a match.
+The code includes a custom **Synonym Engine**. If a Job Description asks for "Generative AI" and your resume lists **"Gemini API"**, the system automatically recognizes this as a match.
 
 ## 🛠️ Tech Stack
 * **Frontend:** Streamlit (Web UI)
